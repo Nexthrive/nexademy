@@ -26,12 +26,6 @@
                 <label for="username">Username</label>
               </div>
             </div>
-            <!-- <div class="input"> -->
-            <!--   <input type="email" id="email" placeholder=" " /> -->
-            <!--   <div class="label"> -->
-            <!--     <label for="email">Email</label> -->
-            <!--   </div> -->
-            <!-- </div> -->
             <div class="input">
               <input type="password" id="password" placeholder=" " />
               <div class="label">
