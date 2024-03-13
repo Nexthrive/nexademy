@@ -3,7 +3,6 @@
 	import { ref } from "vue";
 	import { useRouter } from "vue-router";
 
-
 	const tabAktif = ref("");
 	const router = useRouter();
 
@@ -18,7 +17,7 @@
 	<div class="container">
 		<Navbar />
 		<div class="content-container">
-			<div class="welcome-message">Welcome to SchoolGaz, </div>
+			<div class="welcome-message">Welcome to Nexademy, </div>
 			<div class="tutorial-message">
 				&quot;Unsure how to navigate this website? Visit our tutorial webpage
 				for guidance.&quot;
@@ -160,7 +159,7 @@
 		/* background-color: #fff; */
 		display: flex;
 		flex-direction: column;
-		min-width: 30%;
+		width: 30%;
 		padding: 25px;
 		height: 170px;
 		transition: 0.3s all ease-in-out;
@@ -332,26 +331,22 @@
 	.content-container {
 		display: flex;
 		width: 100%;
-		/* max-width: 1141px; */
 		max-width: 100vw;
 		flex-direction: column;
 		align-items: center;
-		/* margin-left: 47px; */
-		/* margin: 10px 0 146px; */
 	}
 
 	@media (max-width: 991px) {
 		.content-container {
 			max-width: 100%;
 			margin-bottom: 40px;
-			margin-left: 7px;
 		}
 	}
 
 	.welcome-message {
 		color: #000;
 		text-align: center;
-		margin-top: 135px;
+		margin-top: 147px;
 		width: 653px;
 		font: 600 36px Poppins, sans-serif;
 	}
@@ -414,6 +409,16 @@
 		.feature-button {
 			white-space: initial;
 		}
+    .cont {
+      margin-bottom: 47px;
+    }
+    .box {
+      width: 100%;
+    }
+    .container {
+      margin: 20px;
+      margin-top: 10px;
+    }
 	}
 
 	.how-it-works {
