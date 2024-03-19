@@ -15,7 +15,7 @@
 
 <template>
 	<div class="container">
-		<Navbar />
+		<Navbar class="navz"/>
 		<div class="content-container">
 			<div class="welcome-message">Welcome to Nexademy, </div>
 			<div class="tutorial-message">
@@ -284,12 +284,17 @@
 	}
 
 	.line {
-		background-color: #e9e9e9;
-		/* background-color: rgba(255, 255, 255, 0.15); */
+		/* background-color: #e9e9e9; */
+		background-color: rgba(222,222, 222, 0.5);
 		margin-top: 20px;
 		margin-bottom: 20px;
 		height: 1px;
-		transition: 0.3s all ease-in-out;
+    transition: 0.4s all ease-in-out;
+
+	}
+
+	.box:hover .line {
+		background-color: rgba(255, 255, 255, 0.15);
 	}
 
 	.info {
@@ -346,7 +351,7 @@
 	.welcome-message {
 		color: #000;
 		text-align: center;
-		margin-top: 147px;
+		padding-top: 70px;
 		width: 653px;
 		font: 600 36px Poppins, sans-serif;
 	}
@@ -438,4 +443,7 @@
 		margin: auto 0;
 		cursor: pointer;
 	}
+  .navz {
+    z-index: 100;
+  }
 </style>

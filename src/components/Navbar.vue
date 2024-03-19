@@ -10,6 +10,16 @@ const navigasi = (tab: string) => {
   router.push(`/${tab}`);
 };
 
+const isDropdownOpen = ref(false);
+
+const toggleDropdown = () => {
+  isDropdownOpen.value = !isDropdownOpen.value;
+};
+
+const logout = () => {
+  isDropdownOpen.value = false; // Close
+};
+
 </script>
 
 <template>
@@ -20,14 +30,53 @@ const navigasi = (tab: string) => {
     <div class="menu-container">
     </div>
     <div class="nav">
-      <!-- <div class="nav-item">PROFILE</div> -->
-      <div class="nav-item"><ion-icon name="log-out"></ion-icon></div>
-      <img src="../assets/Doge hehe.jpg" class="profil-pic" alt="" @click="navigasi('')" />
+      <div class="dropdown">
+        <img src="../assets/Doge hehe.jpg" class="profil-pic" alt="" @click="toggleDropdown" />
+        <div v-if="isDropdownOpen" class="dropdown-content">
+          <div class="dropdown-item" @click="navigasi('profile')">Profile</div>
+          <div class="dropdown-item" @click="navigasi('notif')">Notifications</div>
+          <div class="dropdown-item" @click="logout">Logout</div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <style scoped>
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  z-index: 1;
+  top: 70px; /* Adjust the top position as needed */
+  right: 10px; /* Adjust the top position as needed */
+}
+
+.dropdown-content .dropdown-item {
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+  color: #333;
+  transition: background-color 0.3s;
+}
+
+.dropdown-content .dropdown-item:hover {
+  background-color: #f2f2f2;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
 .profil-pic {
   background-color: #0000ff;
   width: 50px;
@@ -35,12 +84,15 @@ const navigasi = (tab: string) => {
   border-radius: 50%;
   margin-right: 10px;
 }
+
+
 .nav {
   display: flex;
   align-items: center;
   justify-content: flex-end;
   /* width: 100%; */
 }
+
 .nav-item {
   /* background-color: #0000ff; */
   color: #222;
@@ -59,6 +111,7 @@ const navigasi = (tab: string) => {
   font-weight: 600;
   white-space: nowrap;
   padding: 0 1px;
+  margin-top: 37px;
 }
 
 @media (max-width: 991px) {
