@@ -1,9 +1,16 @@
 import axios, { AxiosResponse } from "axios";
+import Cookies from "cookies-ts";
 
+const cookies = new Cookies();
 const api = import.meta.env.VITE_APP_API_URL;
 
-function getToken(): string {
-	return "some token";
+function getToken(): string | null {
+	const token = cookies.get("token");
+
+	if (token === null) {
+		return null;
+	}
+	return token;
 }
 
 export async function fetchRequest(
